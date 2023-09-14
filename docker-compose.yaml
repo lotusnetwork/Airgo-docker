@@ -1,0 +1,12 @@
+version: '3'
+services:
+  airgo:
+    image: ghcr.io/lotusnetwork/airgo-docker
+    volumes:
+      - './backend:/backend'
+      - './supervisord.conf:/run/supervisor/supervisord.conf'
+      - './crontabs.conf:/etc/crontabs/root'
+    ports:
+      - '80:80'
+#      - '443:443'
+    restart: always
